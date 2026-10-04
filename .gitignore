@@ -1,0 +1,11 @@
+# data and model artefacts are never committed
+*.zip
+*.h5
+*.keras
+*.pt
+*.pth
+ham10000/
+data/
+.ipynb_checkpoints/
+__pycache__/
+.env

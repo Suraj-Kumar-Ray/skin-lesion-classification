@@ -1,0 +1,6 @@
+,Accuracy,F1-Score,AUC
+Base Paper Best (ConvNeXtXLarge),0.8762,0.7615,
+"ResNet50 (my baseline, frozen, image-only)",0.7824,0.5427,0.9365
+"ConvNeXtBase Fusion (previous, single model)",0.8024,0.6937,0.9614
+FINAL: ConvNeXtLarge Fusion + Fine-Tune + Class-Weight (no TTA),0.8582834331337326,0.7865672988185297,0.9714000179138219
+FINAL: ConvNeXtLarge Fusion + Fine-Tune + Class-Weight + TTA,0.8562874251497006,0.7719457011321451,0.9728896407874856

@@ -1,0 +1,8 @@
+# Core stack used by the notebooks (Google Colab already provides most of these).
+tensorflow>=2.15
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+kaggle
