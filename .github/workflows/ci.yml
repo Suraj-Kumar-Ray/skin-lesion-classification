@@ -1,0 +1,27 @@
+name: CI
+
+# There is no app to boot here and the dataset is not in the repository, so training
+# cannot run in CI. What is checked is what actually rots in a notebook repository:
+# a truncated/corrupt .ipynb, a README whose figures have moved, a requirements file
+# that no longer parses. Same check locally: `python scripts/check_repo.py`.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    name: Repository checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check notebooks, README links, requirements and results
+        run: python scripts/check_repo.py

@@ -5,6 +5,11 @@ core work of my M.E. dissertation. Instead of looking at the image alone, the mo
 the **image with patient metadata** (age, sex, anatomical site), and the pipeline is tuned
 for the part that actually matters clinically: **recall on the rare, dangerous classes**.
 
+[![CI](https://github.com/Suraj-Kumar-Ray/skin-lesion-classification/actions/workflows/ci.yml/badge.svg)](https://github.com/Suraj-Kumar-Ray/skin-lesion-classification/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776ab?logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-Keras-ff6f00?logo=tensorflow&logoColor=white)
+![License: MIT](https://img.shields.io/badge/license-MIT-3da639)
+
 ![System architecture](figures/Fig0_System_Architecture.png)
 
 ## Results (held-out test set)
@@ -67,6 +72,17 @@ The notebooks were developed on Google Colab with a GPU runtime.
    The notebooks read the token from the environment — **no credentials are stored in this repo**.
 2. Download the dataset used by the notebooks: `kmader/skin-cancer-mnist-ham10000`.
 3. Open the notebook you want in Colab/Jupyter and run top to bottom.
+
+## What CI verifies
+
+The dataset and a GPU are not available in CI, so training is not re-run there. The
+workflow checks what actually rots in a notebook repository:
+
+- every notebook is still a valid **nbformat-4** document with real code cells;
+- every figure and results file linked from this README **exists**;
+- `requirements.txt` still parses, and the results CSV has its accuracy / F1 / AUC columns.
+
+Run the same check yourself: `python scripts/check_repo.py`.
 
 ## Tech
 
